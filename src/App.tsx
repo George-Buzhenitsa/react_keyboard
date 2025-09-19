@@ -8,19 +8,19 @@ interface State {
 
 export class App extends React.PureComponent<Props, State> {
   state: State = {
-    pressedKey: ''
+    pressedKey: '',
   };
 
-  pressHandler = (event: KeyboardEvent) => {
-    return this.setState({pressedKey: event.key});
-  }
+  handleKeyUp = (event: KeyboardEvent) => {
+    this.setState({ pressedKey: event.key });
+  };
 
   componentDidMount(): void {
-    document.addEventListener('keyup', this.pressHandler);
+    document.addEventListener('keyup', this.handleKeyUp);
   }
 
   componentWillUnmount(): void {
-    document.removeEventListener('keyup', this.pressHandler);
+    document.removeEventListener('keyup', this.handleKeyUp);
   }
 
   render() {
