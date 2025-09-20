@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface Props {};
+interface Props {}
 
 interface State {
   pressedKey: string;
@@ -26,7 +26,8 @@ export class App extends React.PureComponent<Props, State> {
   render() {
     const { pressedKey } = this.state;
 
-    return pressedKey ? (
+    return pressedKey
+    ? (
       <div className="App">
         <p className="App__message">The last pressed key is [{pressedKey}]</p>
       </div>
@@ -36,4 +37,4 @@ export class App extends React.PureComponent<Props, State> {
       </div>
     );
   }
-};
+}
